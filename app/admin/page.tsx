@@ -22,10 +22,14 @@ export default function Dashboard() {
   const hour = new Date().getHours();
   return (
     <>
-      <PageHead title={`${hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'} 👋`} sub="Here is what is happening with the Vedike today.">
-        <Link href="/admin/campaigns" className="abtn abtn-soft"><CalendarDays size={16} />Add campaign / event</Link>
-        <Link href="/admin/news" className="abtn abtn-primary"><Newspaper size={16} />Publish news</Link>
-      </PageHead>
+      <section className="adm-dashboard-banner">
+        <span className="adm-dashboard-kicker"><i />SKJV ADMINISTRATION</span>
+        <PageHead title={`${hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening'} 👋`} sub="Here is what is happening with the Vedike today.">
+          <Link href="/admin/campaigns" className="abtn abtn-soft"><CalendarDays size={16} />Add campaign / event</Link>
+          <Link href="/admin/news" className="abtn abtn-primary"><Newspaper size={16} />Publish news</Link>
+        </PageHead>
+        <span className="adm-dashboard-watermark" aria-hidden="true">SKJV</span>
+      </section>
 
       <div className="kpis">
         {kpis.map(([label, value, sub, I, href]) => (
