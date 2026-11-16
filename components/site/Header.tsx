@@ -12,6 +12,7 @@ export const NAV: { href: string; key: string }[] = [
   { href: '/news', key: 'nav.news' },
   { href: '/campaigns', key: 'nav.campaigns' },
   { href: '/gallery', key: 'nav.gallery' },
+  { href: '/issues', key: 'nav.issues' },
   { href: '/about', key: 'nav.about' },
 ];
 

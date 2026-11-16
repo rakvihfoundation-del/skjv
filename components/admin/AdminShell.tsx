@@ -4,7 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import {
   LayoutDashboard, Users, HandCoins, Mail, Settings, LogOut, Menu, X, ExternalLink, FlaskConical, Loader2, type LucideIcon,
-  Images, Newspaper, Megaphone, GalleryHorizontalEnd, Handshake, Camera, MapPinned, UserRound, CalendarCheck2, HeartHandshake,
+  Images, Newspaper, Megaphone, GalleryHorizontalEnd, Handshake, Camera, MapPinned, UserRound, CalendarCheck2, HeartHandshake, AlertTriangle,
 } from 'lucide-react';
 import type { AdminUser } from '@/lib/types';
 
@@ -16,7 +16,7 @@ type NavGroup = { group: string; items: [href: string, label: string, icon: Luci
 
 const NAV: NavGroup[] = [
   { group: 'Overview', items: [['/admin', 'Dashboard', LayoutDashboard]] },
-  { group: 'People', items: [['/admin/members', 'Members', Users], ['/admin/volunteers', 'Volunteers', HeartHandshake], ['/admin/registrations', 'Event Registrations', CalendarCheck2], ['/admin/donations', 'Donations', HandCoins], ['/admin/messages', 'Messages', Mail]] },
+  { group: 'People', items: [['/admin/members', 'Members', Users], ['/admin/volunteers', 'Volunteers', HeartHandshake], ['/admin/registrations', 'Event Registrations', CalendarCheck2], ['/admin/donations', 'Donations', HandCoins], ['/admin/messages', 'Messages', Mail], ['/admin/issues', 'Issues', AlertTriangle]] },
   {
     group: 'Website content', items: [
       ['/admin/slides', 'Hero Banners', Images], ['/admin/news', 'News', Newspaper],

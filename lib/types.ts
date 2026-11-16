@@ -13,6 +13,7 @@ export type GalleryItem = Tables<'gallery'>;
 export type Leader = Tables<'leaders'>;
 export type Partner = Tables<'partners'>;
 export type InstagramPost = Tables<'instagram'>;
+export type Issue = Tables<'issues'>;
 
 export type CampaignStatus = 'upcoming' | 'ongoing' | 'completed';
 export type CampaignRow = Tables<'campaigns'>;

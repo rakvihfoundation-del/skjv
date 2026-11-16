@@ -192,6 +192,29 @@ export type Database = {
         };
         Relationships: [];
       };
+      issues: {
+        Row: {
+          id: number; member_id: number | null; volunteer_id: number | null; user_id: string | null;
+          author_name: string; author_phone: string | null; description: string; city: string;
+          needs: string | null; images: string[]; video: string | null; pdf: string | null; status: string; admin_note: string | null;
+        } & Timestamps;
+        Insert: {
+          id?: never; member_id?: number | null; volunteer_id?: number | null; user_id?: string | null;
+          author_name: string; author_phone?: string | null; description: string; city: string;
+          needs?: string | null; images?: string[]; video?: string | null; pdf?: string | null; status?: string; admin_note?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          member_id?: number | null; volunteer_id?: number | null; user_id?: string | null;
+          author_name?: string; author_phone?: string | null; description?: string; city?: string;
+          needs?: string | null; images?: string[]; video?: string | null; pdf?: string | null; status?: string; admin_note?: string | null;
+          created_at?: string;
+        };
+        Relationships: [
+          { foreignKeyName: 'issues_member_id_fkey'; columns: ['member_id']; isOneToOne: false; referencedRelation: 'members'; referencedColumns: ['id'] },
+          { foreignKeyName: 'issues_volunteer_id_fkey'; columns: ['volunteer_id']; isOneToOne: false; referencedRelation: 'volunteers'; referencedColumns: ['id'] },
+        ];
+      };
     };
     Views: { [_ in never]: never };
     Functions: {
